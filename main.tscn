@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://7qrebi2gqtno"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rj0nf"]
+
+[node name="Main" type="VBoxContainer"]
+offset_right = 576.0
+offset_bottom = 324.0
+scale = Vector2(2, 2)
+script = ExtResource("1_rj0nf")
+
+[node name="MyID" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Players" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Ping" type="Label" parent="."]
+layout_mode = 2
+text = "Ping: "
+horizontal_alignment = 1
