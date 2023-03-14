@@ -46,7 +46,7 @@ func answer_ping_client():
 	$Ping.text = "Ping: "+str(Time.get_ticks_msec()-time)
 
 func _process(delta):
-	$Players.text = str(multiplayer.get_peers())
+	$Players.text = "Other players: "+str(multiplayer.get_peers())
 
 
 
