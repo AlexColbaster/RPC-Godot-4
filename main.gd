@@ -35,19 +35,18 @@ func client_init():
 			rpc_id(1, "ask_ping_server", multiplayer.get_unique_id())
 	)
 
-func _process(delta):
-	$Players.text = str(multiplayer.get_peers())
-
 @rpc("any_peer", "unreliable", "call_local")
 func ask_ping_server(id_who_asked_ping):
-	print(1)
+	# отправить ответ клиенту
 	rpc_id(id_who_asked_ping, "answer_ping_client")
 
 @rpc("unreliable")
 func answer_ping_client():
+	# посчитать, сколько времени ушло на запрос туда-обратно
 	$Ping.text = "Ping: "+str(Time.get_ticks_msec()-time)
-	get_multiplayer_authority()
 
+func _process(delta):
+	$Players.text = str(multiplayer.get_peers())
 
 
 
